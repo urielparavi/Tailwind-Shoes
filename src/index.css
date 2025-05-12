@@ -1,3 +1,17 @@
+/* Import the base styles of Tailwind, which includes default styles like fonts, colors, and general resets */
+/* We need this to ensure a consistent starting point across all browsers, including default font settings, background colors, and margin/padding resets. */
 @tailwind base;
+
+/* Import the components of Tailwind, which adds predefined styles for building components like buttons, cards, etc. */
+/* We need this to quickly use ready-made, customizable UI components without having to write all the CSS for each element from scratch. */
 @tailwind components;
+
+/* Import the utilities of Tailwind, which include utility classes for margins, padding, colors, font sizes, etc. */
+/* We need this for rapid styling of individual elements directly in the markup using utility classes, making the development process faster and more efficient. */
 @tailwind utilities;
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}
