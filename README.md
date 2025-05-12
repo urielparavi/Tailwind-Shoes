@@ -18,3 +18,11 @@ To install Prettier, Tailwind class sorting support, and SVG importing as React 
 ```bash
 npm install -D prettier prettier-plugin-tailwindcss vite-plugin-svgr
 ```
+
+## 📦 Installing React Icons
+
+To install the `react-icons` package for easy access to popular icons in your React project, run the following command:
+
+```bash
+npm install react-icons
+```
