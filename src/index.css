@@ -10,6 +10,12 @@
 /* We need this for rapid styling of individual elements directly in the markup using utility classes, making the development process faster and more efficient. */
 @tailwind utilities;
 
+@layer base {
+  body {
+    font-family: 'Nunito Sans Variable', sans-serif;
+  }
+}
+
 @layer utilities {
   .flex-center {
     @apply flex items-center justify-center;

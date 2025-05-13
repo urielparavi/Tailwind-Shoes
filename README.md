@@ -26,3 +26,29 @@ To install the `react-icons` package for easy access to popular icons in your Re
 ```bash
 npm install react-icons
 ```
+
+### 🖋️ Font
+
+We use the **Nunito Sans** variable font in this project to achieve a modern and clean typographic style, with smooth control over font weights using a single file.
+
+The font is added using the [@fontsource-variable/nunito-sans](https://www.npmjs.com/package/@fontsource-variable/nunito-sans) package, which allows self-hosting the font directly from `node_modules`, without relying on external CDNs.
+
+To install, import, and apply the font:
+
+```bash
+npm install @fontsource-variable/nunito-sans
+```
+
+```js
+// Import the font in your entry file (e.g., index.js)
+import '@fontsource-variable/nunito-sans';
+```
+
+```css
+/* Apply the font in your global styles */
+body {
+  font-family: 'Nunito Sans Variable', sans-serif;
+}
+```
+
+Using a variable font improves performance and flexibility, since it includes multiple weights and styles in one file — perfect for responsive and scalable UI design.
