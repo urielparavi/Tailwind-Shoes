@@ -6,8 +6,8 @@ export function ShoeDetail() {
   return (
     <div className="flex flex-col space-y-4 lg:flex-row lg:flex-row-reverse">
       {/* Shoe image */}
-      <div className="flex-1">
-        <div className="bg-gradient-to-br from-[#A18CD1] from-10% via-[#FBC2EB] via-50% to-[#8EC5FC] rounded">
+      <div className="flex-1 lg:-mt-32 lg:ml-28">
+        <div className="p-4 flex-center h-full bg-gradient-to-br from-[#A18CD1] from-10% via-[#FBC2EB] via-50% to-[#8EC5FC] rounded">
           <img src={nike1} alt="The red nike shoe" />
         </div>
       </div>

@@ -15,7 +15,7 @@ export function Nav() {
   return (
     // 🧠 flex-wrap allows flex items to wrap onto multiple lines when there's not enough space.
     // Without it (default: nowrap), all items stay on a single line, even if they overflow the container.
-    <nav className="flex flex-wrap items-center justify-between">
+    <nav className="z-10 relative flex flex-wrap items-center justify-between">
       {/* Logo */}
       <Link to="/">
         <NikeLogo className="h-20 w-20" />
@@ -42,10 +42,10 @@ export function Nav() {
                 // 🧠 Update the active state on click
                 onClick={() => setActive(route)}
                 // className={`w-full text-center rounded px-3 py-2 cursor-pointer ${i === 0 ? 'bg-blue-500 text-white' : 'hover:bg-gray-100'}`}
-                className={`w-full text-center rounded px-3 py-2 cursor-pointer transition-all duration-300 ease-in-out transform will-change-transform
+                className={`w-full text-center rounded px-3 py-2 cursor-pointer transition-all duration-300 ease-in-out transform will-change-transform ${(i == 3 || i == 4) && 'lg:text-white'}
                   ${
                     isActive
-                      ? 'text-blue-500 lg:bg-transparent'
+                      ? 'text-blue-500 lg:bg-transparent lg:text-blue-500'
                       : 'hover:bg-blue-500 hover:text-white hover:scale-105 lg:hover:bg-transparent lg:hover:scale-105 lg:hover:text-blue-600'
                   }`} // 🧠 Blue if active, gray on hover if not
                 key={route}
@@ -58,8 +58,8 @@ export function Nav() {
       </div>
       {/* Cart button */}
       {/* 🧠 'fixed' positions the element relative to the viewport, so 'bottom-4' and 'left-4' are measured from the bottom-left corner of the screen (not any parent),but becomes static (normal flow) on large screens (lg:static) */}
-      <div className="fixed bottom-4 left-4 lg:static">
-        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md">
+      <div className="fixed bottom-4 left-4 lg:static lg:mr-8">
+        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
           <TbShoppingBag />
         </div>
       </div>
