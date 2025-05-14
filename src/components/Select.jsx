@@ -1,6 +1,7 @@
 import { IoIosArrowDown } from 'react-icons/io';
+import { twMerge } from 'tw-merge';
 
-export function Select({ title, options }) {
+export function Select({ title, options, className }) {
   return (
     <div className="relative">
       <select
@@ -11,7 +12,9 @@ export function Select({ title, options }) {
         //
         // ⚠️ Without this, the first real option (like 41) would be selected by default
         defaultValue={''}
-        className="w-24 appearance-none border border-gray-300 bg-white p-4 rounded-md cursor-pointer"
+        className={twMerge(
+          `w-24 appearance-none border border-gray-300 bg-white rounded-md cursor-pointer p-4 ${className}`,
+        )}
       >
         {/* 
             🟢 <option value="" disabled hidden>

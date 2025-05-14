@@ -52,3 +52,93 @@ body {
 ```
 
 Using a variable font improves performance and flexibility, since it includes multiple weights and styles in one file — perfect for responsive and scalable UI design.
+
+---
+
+## ✨ Tailwind Class Merge with `tw-merge`
+
+When working with Tailwind CSS, it’s common to accidentally apply conflicting utility classes. For example:
+
+```js
+<div className="text-sm text-lg text-red-500 text-blue-500" />
+```
+
+Tailwind applies **all** of these, but only the **last one wins**, which can lead to messy or redundant code.
+
+---
+
+### ✅ Solution: [`tw-merge`](https://github.com/dcastil/twmerge)
+
+`tw-merge` is a utility that **merges Tailwind classes intelligently**, keeping only the relevant ones.
+
+---
+
+### 📦 Installation
+
+```bash
+npm install tw-merge
+```
+
+or with yarn:
+
+```bash
+yarn add tw-merge
+```
+
+---
+
+### 🚀 Basic Usage
+
+```js
+import { twMerge } from 'tw-merge';
+
+const buttonClass = twMerge('px-4 py-2 bg-blue-500 bg-red-500');
+// Result: "px-4 py-2 bg-red-500"
+```
+
+It automatically resolves conflicts:
+
+- `bg-*`, `text-*`, `flex` vs `inline-flex`, etc.
+- Responsive classes (`md:*`)
+- Pseudo classes (`hover:*`, `focus:*`)
+
+---
+
+### 🧠 Why Use It?
+
+- Prevents class bloat and conflicts.
+- Keeps your components clean.
+- Plays nicely with tools like `clsx`, `tailwind-variants`, and `cva`.
+
+---
+
+### 🔁 Combine with `clsx` or `classnames`
+
+```js
+import { twMerge } from 'tw-merge';
+import clsx from 'clsx';
+
+const className = twMerge(
+  clsx('px-4', isPrimary ? 'bg-blue-500' : 'bg-gray-500', 'bg-red-500'),
+);
+// Result: "px-4 bg-red-500"
+```
+
+---
+
+### 🧩 Works great with component libraries and conditional styles!
+
+Want to take it further? Use it with:
+
+- `tailwind-variants`
+- `cva` (class variance authority)
+
+---
+
+### 📚 More Info
+
+GitHub: [dcastil/twmerge](https://github.com/dcastil/twmerge)
+
+---
+
+Happy Tailwinding! 🌬️
