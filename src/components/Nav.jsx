@@ -7,7 +7,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 
 const ROUTES = ['Home', 'About', 'Services', 'Pricing', 'Contact'];
 
-export function Nav() {
+export function Nav({ onClickShoppingBtn }) {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   // State to track the currently active link
   const [active, setActive] = useState('');
@@ -58,7 +58,10 @@ export function Nav() {
       </div>
       {/* Cart button */}
       {/* 🧠 'fixed' positions the element relative to the viewport, so 'bottom-4' and 'left-4' are measured from the bottom-left corner of the screen (not any parent),but becomes static (normal flow) on large screens (lg:static) */}
-      <div className="fixed bottom-4 left-4 lg:static lg:mr-8 btn-press-anim">
+      <div
+        onClick={onClickShoppingBtn}
+        className="fixed bottom-4 left-4 lg:static lg:mr-8 btn-press-anim"
+      >
         <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
           <TbShoppingBag />
         </div>
