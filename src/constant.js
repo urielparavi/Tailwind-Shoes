@@ -10,7 +10,7 @@ export const SHOE_LIST = [
   {
     id: 1,
     src: nike1,
-    className: 'bg-[#EEFFA4]',
+    className: 'bg-[#F0F9FF]',
     title: 'Nike Air Max 270',
     description:
       "The Nike Air Max 270 is a lifestyle shoe that's sure to turn heads with its vibrant color gradient.",
@@ -19,7 +19,7 @@ export const SHOE_LIST = [
   {
     id: 2,
     src: nike2,
-    className: 'bg-[#DDCEFD]',
+    className: 'bg-[#FFF7ED]',
     title: 'Nike Air Vapor',
     description:
       "The Nike Air Vapor is a sleek and stylish shoe that's perfect for any occasion. It's the perfect shoe for any active lifestyle.",
@@ -28,7 +28,7 @@ export const SHOE_LIST = [
   {
     id: 3,
     src: nike3,
-    className: 'bg-[#DAFFA2]',
+    className: 'bg-[#FEF9C3]',
     title: 'Nike Air Max 2090',
     description:
       "The Nike Air Max 2090 is shoe that's both stylish and comfortable. It's the perfect shoe for any fashion-forward individual.",
@@ -37,7 +37,7 @@ export const SHOE_LIST = [
   {
     id: 4,
     src: nike4,
-    className: 'bg-[#FCC4EA]',
+    className: 'bg-[#F3E8FF]',
     title: 'Nike Air Blazer',
     description:
       "The Nike Air Blazer is a classic shoe that's perfect for any casual occasion. It's the perfect shoe for any laid-back individual.",

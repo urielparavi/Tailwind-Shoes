@@ -18,7 +18,7 @@ export function Card({ item }) {
         </div>
       </div>
       <img
-        className="absolute left-[50%] top-1 h-40 w-56"
+        className="absolute left-[50%] top-1 h-40 w-56 object-contain"
         src={src}
         alt="The card's shoe"
       />

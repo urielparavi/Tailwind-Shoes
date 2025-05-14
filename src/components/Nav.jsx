@@ -45,7 +45,7 @@ export function Nav() {
                 className={`w-full text-center rounded px-3 py-2 cursor-pointer transition-all duration-300 ease-in-out transform will-change-transform ${(i == 3 || i == 4) && 'lg:text-white'}
                   ${
                     isActive
-                      ? 'text-blue-500 lg:bg-transparent lg:text-blue-500'
+                      ? 'text-blue-500 lg:bg-transparent lg:text-blue-500 active-link'
                       : 'hover:bg-blue-500 hover:text-white hover:scale-105 lg:hover:bg-transparent lg:hover:scale-105 lg:hover:text-blue-600'
                   }`} // 🧠 Blue if active, gray on hover if not
                 key={route}

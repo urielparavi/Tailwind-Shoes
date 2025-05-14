@@ -24,4 +24,11 @@
     /* @apply transition active:scale-75; */
     @apply transition-transform duration-150 ease-in-out active:scale-90;
   }
+  /* 
+    .active-link: Used to ensure the active link stays blue on large screens after clicking.
+    The !important ensures the blue color overrides any conflicting styles that we had, so we added it.
+  */
+  .active-link {
+    color: #3b82f6 !important;
+  }
 }
