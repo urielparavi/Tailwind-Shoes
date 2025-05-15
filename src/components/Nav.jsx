@@ -33,7 +33,7 @@ export function Nav({ onClickShoppingBtn }) {
       <div
         className={`${!isMobileMenuShown && 'hidden'} w-full lg:w-auto lg:block`}
       >
-        <ul className="lg:space-x-8 flex flex-col lg:flex-row items-center bg-gray-50 lg:bg-transparent text-lg border border-gray-100 lg:border-none rounded-lg p-4 lg:dark:text-white">
+        <ul className="lg:space-x-8 flex flex-col lg:flex-row items-center bg-gray-50 lg:bg-transparent text-lg border border-gray-100 lg:border-none rounded-t-lg p-4 lg:dark:text-white">
           {ROUTES.map((route, i) => {
             // 🧠 Check if the current route is active
             const isActive = active === route;

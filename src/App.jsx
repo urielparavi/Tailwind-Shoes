@@ -8,16 +8,17 @@ import { Footer } from './components/Footer';
 import { Cart } from './components/Cart';
 import { HiSun, HiMoon } from 'react-icons/hi2';
 
-const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
-  return {
-    product: shoe,
-    qty: 1,
-    size: 44,
-  };
-});
+// const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
+//   return {
+//     product: shoe,
+//     qty: 1,
+//     size: 44,
+//   };
+// });
 
 export function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
 
   // useEffect runs once when the component mounts
   useEffect(() => {
@@ -45,13 +46,14 @@ export function App() {
   return (
     <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
-      <ShoeDetail />
-      <NewArrivalsSection items={SHOE_LIST} />
+      <ShoeDetail shoe={currentShoe} />
+      <NewArrivalsSection items={SHOE_LIST} onClickCard={setCurrentShoe} />
       <Sidebar
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart cartItems={FAKE_CART_ITEMS} />
+        <Cart cartItems={} />
+        {/* <Cart cartItems={FAKE_CART_ITEMS} /> */}
       </Sidebar>
       <div className="fixed bottom-4 right-4">
         <button
