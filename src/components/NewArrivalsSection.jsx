@@ -21,7 +21,7 @@ export function NewArrivalsSection({ items }) {
     /* tracking-widest: Adds extra letter spacing for a more spaced-out, elegant look */
     <div className="mt-20">
       <div className="flex-center">
-        <div className="bg-[url('./assets/lines.png')] bg-center bg-no-repeat bg-contain text-4xl font-extrabold tracking-widest text-gray-800 py-8 px-4 text-center">
+        <div className="bg-[url('./assets/lines.png')] bg-center bg-no-repeat bg-contain text-4xl font-extrabold tracking-widest text-gray-800 py-8 px-4 text-center dark:text-white">
           NEW ARRIVALS
         </div>
       </div>

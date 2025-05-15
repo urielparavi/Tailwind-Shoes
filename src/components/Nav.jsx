@@ -18,12 +18,12 @@ export function Nav({ onClickShoppingBtn }) {
     <nav className="z-10 relative flex flex-wrap items-center justify-between">
       {/* Logo */}
       <Link to="/">
-        <NikeLogo className="h-20 w-20" />
+        <NikeLogo className="h-20 w-20 dark:fill-white" />
       </Link>
       {/* Burger button */}
       <button
         onClick={() => setIsMobileMenuShown(!isMobileMenuShown)}
-        className="hover:bg-gray-100 p-2 focus:ring-2 focus:ring-gray-200 rounded-lg lg:hidden"
+        className="hover:bg-gray-100 p-2 focus:ring-2 focus:ring-gray-200 rounded-lg lg:hidden dark:text-gray-400 dark:hover:bg-gray-700"
       >
         <RxHamburgerMenu size={25} />
       </button>
@@ -33,7 +33,7 @@ export function Nav({ onClickShoppingBtn }) {
       <div
         className={`${!isMobileMenuShown && 'hidden'} w-full lg:w-auto lg:block`}
       >
-        <ul className="lg:space-x-8 flex flex-col lg:flex-row items-center bg-gray-50 lg:bg-transparent text-lg border border-gray-100 lg:border-none rounded-lg p-4">
+        <ul className="lg:space-x-8 flex flex-col lg:flex-row items-center bg-gray-50 lg:bg-transparent text-lg border border-gray-100 lg:border-none rounded-lg p-4 lg:dark:text-white">
           {ROUTES.map((route, i) => {
             // 🧠 Check if the current route is active
             const isActive = active === route;
@@ -62,7 +62,7 @@ export function Nav({ onClickShoppingBtn }) {
         onClick={onClickShoppingBtn}
         className="fixed bottom-4 left-4 lg:static lg:mr-8 btn-press-anim"
       >
-        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
+        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer hover:text-red-600 transition-colors">
           <TbShoppingBag />
         </div>
       </div>

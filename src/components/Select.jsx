@@ -3,7 +3,7 @@ import { twMerge } from 'tw-merge';
 
 export function Select({ title, options, className, defaultValue }) {
   return (
-    <div className="relative">
+    <div className="relative dark:text-black">
       <select
         // 🟡 defaultValue={''}
         // ✅ Tells React: start with an empty selection (no value selected yet)

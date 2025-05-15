@@ -8,7 +8,7 @@ export function Sidebar({ children, isOpen, onClickClose }) {
           w-full md:w-[50%] lg:w-[35%] 
           bg-white shadow-xl 
           transform transition-transform duration-300 ease-in-out
-          p-5 rounded-l-2xl overflow-y-auto
+          p-5 rounded-l-2xl overflow-y-auto dark:bg-night
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
       >

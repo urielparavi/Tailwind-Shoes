@@ -43,7 +43,7 @@ export function App() {
   };
 
   return (
-    <div className="animate-fadeIn p-10 xl:px-24">
+    <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
       <ShoeDetail />
       <NewArrivalsSection items={SHOE_LIST} />
