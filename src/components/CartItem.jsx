@@ -3,8 +3,8 @@ import { FaDollarSign } from 'react-icons/fa';
 import { Select } from './Select';
 import { SIZES, QTY } from '../constant';
 
-export function CartItem({ item }) {
-  const { src, title, description, price } = item;
+export function CartItem({ item: { product, qty, size } }) {
+  const { src, title, description, price } = product;
 
   return (
     <div className="cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow duration-300 hover:bg-[#f7ffe5] rounded-2xl p-4 space-y-4">
@@ -42,11 +42,21 @@ export function CartItem({ item }) {
         <div className="flex gap-6">
           <div>
             <div className="text-sm font-bold text-gray-700 mb-1">SIZE</div>
-            <Select title="" options={SIZES} className={'w-16 p-1'} />
+            <Select
+              defaultValue={size}
+              title=""
+              options={SIZES}
+              className={'w-16 p-1 pl-2'}
+            />
           </div>
           <div>
             <div className="text-sm font-bold text-gray-700 mb-1">QTY</div>
-            <Select title="" options={QTY} className={'w-16 p-1'} />
+            <Select
+              defaultValue={qty}
+              title=""
+              options={QTY}
+              className={'w-16 p-1 pl-2'}
+            />
           </div>
         </div>
         <button className="self-start md:self-center hover:text-red-600 transition-colors">

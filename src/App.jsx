@@ -4,8 +4,16 @@ import { NewArrivalsSection } from './components/NewArrivalsSection';
 import { ShoeDetail } from './components/ShoeDetail';
 import { Sidebar } from './components/Sidebar';
 import { SHOE_LIST } from './constant';
-import { CartItem } from './components/CartItem';
 import { Footer } from './components/Footer';
+import { Cart } from './components/Cart';
+
+const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
+  return {
+    product: shoe,
+    qty: 1,
+    size: 44,
+  };
+});
 
 export function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,16 +27,7 @@ export function App() {
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <h2 className="text-2xl font-bold mb-10">YOUR CART</h2>
-        {/* <CartItem item={SHOE_LIST[0]} />
-        <CartItem item={SHOE_LIST[1]} />
-        <CartItem item={SHOE_LIST[2]} />
-        <CartItem item={SHOE_LIST[3]} /> */}
-        <div className="space-y-4">
-          {SHOE_LIST.map((item) => (
-            <CartItem key={item.id} item={item} />
-          ))}
-        </div>
+        <Cart cartItems={FAKE_CART_ITEMS} />
       </Sidebar>
       <Footer />
     </div>

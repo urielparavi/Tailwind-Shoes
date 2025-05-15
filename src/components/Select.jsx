@@ -1,7 +1,7 @@
 import { IoIosArrowDown } from 'react-icons/io';
 import { twMerge } from 'tw-merge';
 
-export function Select({ title, options, className }) {
+export function Select({ title, options, className, defaultValue }) {
   return (
     <div className="relative">
       <select
@@ -11,7 +11,7 @@ export function Select({ title, options, className }) {
         // ✅ Makes sure the placeholder shows up when the component first renders
         //
         // ⚠️ Without this, the first real option (like 41) would be selected by default
-        defaultValue={''}
+        defaultValue={defaultValue || ''}
         className={twMerge(
           `w-24 appearance-none border border-gray-300 bg-white rounded-md cursor-pointer p-4 ${className}`,
         )}
