@@ -8,17 +8,12 @@ import { Footer } from './components/Footer';
 import { Cart } from './components/Cart';
 import { HiSun, HiMoon } from 'react-icons/hi2';
 
-// const FAKE_CART_ITEMS = SHOE_LIST.map((shoe) => {
-//   return {
-//     product: shoe,
-//     qty: 1,
-//     size: 44,
-//   };
-// });
-
 export function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
+  const [cartItems, setCartItems] = useState([]);
+
+  console.log('The App run');
 
   // useEffect runs once when the component mounts
   useEffect(() => {
@@ -43,17 +38,43 @@ export function App() {
     );
   };
 
+  const addToCart = (product, qty, size) => {
+    // Check that quantity and size are provided
+    if (qty && size) {
+      // Create a new copy of the cart items array to avoid mutating state directly
+      const updatedCartItems = [...cartItems];
+
+      // Find index of existing item in the cart with the same product ID (ignoring size here)
+      const existingItemIndex = cartItems.findIndex(
+        (item) => item.product.id === product.id,
+      );
+
+      // If the product is already in the cart, replace its quantity and size with the new values
+      if (existingItemIndex > -1) {
+        updatedCartItems[existingItemIndex].qty = qty;
+        updatedCartItems[existingItemIndex].size = size;
+      }
+      // Otherwise, add a new item with product, quantity, and size to the cart
+      else {
+        updatedCartItems.push({ product, qty, size });
+      }
+
+      // Update the cart state with the modified array
+      setCartItems(updatedCartItems);
+    }
+  };
+
   return (
     <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night">
       <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
-      <ShoeDetail shoe={currentShoe} />
+      <ShoeDetail shoe={currentShoe} onClickAdd={addToCart} />
       <NewArrivalsSection items={SHOE_LIST} onClickCard={setCurrentShoe} />
       <Sidebar
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart cartItems={} />
-        {/* <Cart cartItems={FAKE_CART_ITEMS} /> */}
+        {/* Our Bag */}
+        <Cart cartItems={cartItems} />
       </Sidebar>
       <div className="fixed bottom-4 right-4">
         <button

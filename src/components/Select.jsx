@@ -1,17 +1,20 @@
 import { IoIosArrowDown } from 'react-icons/io';
 import { twMerge } from 'tw-merge';
 
-export function Select({ title, options, className, defaultValue }) {
+export function Select({ title, options, className, onChange, value }) {
+  console.log('The select run');
   return (
     <div className="relative dark:text-black">
       <select
+        onChange={(e) => onChange(e.target.value)}
+        value={value || ''}
         // 🟡 defaultValue={''}
         // ✅ Tells React: start with an empty selection (no value selected yet)
         // ✅ Matches the <option value=""> below
         // ✅ Makes sure the placeholder shows up when the component first renders
         //
         // ⚠️ Without this, the first real option (like 41) would be selected by default
-        defaultValue={defaultValue || ''}
+        // defaultValue={defaultValue || ''}
         className={twMerge(
           `w-24 appearance-none border border-gray-300 bg-white rounded-md cursor-pointer p-4 ${className}`,
         )}

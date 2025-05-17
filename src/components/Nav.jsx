@@ -8,6 +8,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 const ROUTES = ['Home', 'About', 'Services', 'Pricing', 'Contact'];
 
 export function Nav({ onClickShoppingBtn }) {
+  console.log('The Nuv run');
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   // State to track the currently active link
   const [active, setActive] = useState('');

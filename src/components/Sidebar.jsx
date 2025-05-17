@@ -1,4 +1,5 @@
 export function Sidebar({ children, isOpen, onClickClose }) {
+  console.log('The sidebar run');
   return (
     <div>
       {/* SIDEBAR */}

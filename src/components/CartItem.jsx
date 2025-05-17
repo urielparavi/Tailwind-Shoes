@@ -4,6 +4,7 @@ import { Select } from './Select';
 import { SIZES, QTY } from '../constant';
 
 export function CartItem({ item: { product, qty, size } }) {
+  console.log('The CartItem');
   const { src, title, description, price } = product;
 
   return (
@@ -54,7 +55,7 @@ export function CartItem({ item: { product, qty, size } }) {
               SIZE
             </div>
             <Select
-              defaultValue={size}
+              value={size}
               title=""
               options={SIZES}
               className={'w-16 p-1 pl-2'}
@@ -65,7 +66,7 @@ export function CartItem({ item: { product, qty, size } }) {
               QTY
             </div>
             <Select
-              defaultValue={qty}
+              value={qty}
               title=""
               options={QTY}
               className={'w-16 p-1 pl-2'}

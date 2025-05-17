@@ -66,11 +66,16 @@ export default {
             transform: 'translateY(0)',
           },
         },
+        'scale-in': {
+          '0%': { transform: 'scale(0.9)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out',
         float: 'float 4s ease-in-out infinite',
         fadeIn: 'fadeIn 1s ease-in-out',
+        'scale-in': 'scale-in 0.3s ease-out forwards',
       },
     },
   },

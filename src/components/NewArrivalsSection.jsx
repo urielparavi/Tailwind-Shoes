@@ -1,6 +1,7 @@
 import { Card } from './Card';
 
 export function NewArrivalsSection({ items, onClickCard }) {
+  console.log('The NewArrivalsSection run');
   return (
     /* bg-no-repeat: ensures the background image appears only once */
     /* bg-contain: scales the image to fit the container without cropping */

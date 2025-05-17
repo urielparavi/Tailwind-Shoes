@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Select } from './Select';
 import { QTY, SIZES } from '../constant';
 
-export function ShoeDetail({ shoe }) {
+export function ShoeDetail({ shoe, onClickAdd }) {
+  console.log('The ShoeDetail run');
   const { title, price, description, src } = shoe;
+
+  const [form, setForm] = useState({ qty: null, size: null });
+
   return (
     <div className="flex flex-col space-y-4 lg:flex-row lg:flex-row-reverse dark:text-white">
       {/* Shoe image */}
@@ -20,12 +25,23 @@ export function ShoeDetail({ shoe }) {
         <div className="flex space-x-6">
           <div className="text-3xl font-extrabold md:text-6xl">{price} $</div>
 
-          <Select title="QTY" options={QTY} />
-          <Select title="SIZE" options={SIZES} />
+          <Select
+            value={form.qty}
+            onChange={(qty) => setForm({ ...form, qty })}
+            title="QTY"
+            options={QTY}
+          />
+          <Select
+            value={form.size}
+            onChange={(size) => setForm({ ...form, size })}
+            title="SIZE"
+            options={SIZES}
+          />
         </div>
         {/* Shoe buttons and links */}
         <div className="space-x-10">
           <button
+            onClick={() => onClickAdd(shoe, form.qty, form.size)}
             className="h-14 w-44 rounded-lg px-6 py-2 text-white font-semibold
              bg-black hover:bg-gray-800 active:bg-gray-700
              dark:bg-blue-950 dark:hover:bg-blue-900 dark:active:bg-blue-800
