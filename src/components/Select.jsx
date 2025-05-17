@@ -2,7 +2,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { twMerge } from 'tw-merge';
 
 export function Select({ title, options, className, onChange, value }) {
-  // console.log('The select run');
+  console.log('The select run');
   return (
     <div className="relative dark:text-black">
       <select

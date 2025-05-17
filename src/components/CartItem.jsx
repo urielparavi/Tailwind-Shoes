@@ -4,7 +4,7 @@ import { Select } from './Select';
 import { SIZES, QTY } from '../constant';
 
 export function CartItem({ item: { product, qty, size }, onClickTrash }) {
-  // console.log('The CartItem');
+  console.log('The CartItem');
   const { src, title, description, price, id } = product;
 
   return (

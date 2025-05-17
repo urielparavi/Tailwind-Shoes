@@ -13,7 +13,7 @@ export function App() {
   const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
   const [cartItems, setCartItems] = useState([]);
 
-  // console.log('The App run');
+  console.log('The App run');
 
   // useEffect runs once when the component mounts
   useEffect(() => {

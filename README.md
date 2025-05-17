@@ -142,3 +142,103 @@ GitHub: [dcastil/twmerge](https://github.com/dcastil/twmerge)
 ---
 
 Happy Tailwinding! 🌬️
+
+##### Tailwind Notes and summaries
+
+## 🔍 Tailwind CSS: Group vs Peer
+
+This component demonstrates the difference between `group` and `peer` in Tailwind CSS,  
+and how each is used to control styling based on hover behavior.
+
+---
+
+### 🔷 `group` Usage
+
+- The outer `<div>` has the class `group`, which allows **child elements**  
+  to respond to the **parent's state** (like hover).
+- The first `<p>` tag uses `group-hover:text-red-500`, meaning:  
+  ➤ _"Change this paragraph's text color to red when the parent `.group` is hovered."_
+
+📌 `group-*` is used when the **PARENT is the trigger**,  
+and the **CHILD is the one that changes visually**.
+
+---
+
+### 🟣 `peer` Usage
+
+- Inside the purple container (`flex flex-col`),  
+  two squares are marked with `peer/yellowSquare` and `peer/blackSquare`.
+- These are the **source elements** that "broadcast" their state (e.g., hover).
+- Below them, two hidden `<div>`s use:
+  - `peer-hover/yellowSquare:block`
+  - `peer-hover/blackSquare:block`
+
+This means:  
+➤ _"Make this element visible when the corresponding peer is hovered."_
+
+📌 `peer-*` is used when the **SIBLING is the trigger**,  
+and an adjacent element **reacts to that sibling**.
+
+---
+
+### 🔁 Summary: Who Triggers Who?
+
+| Feature | Triggers From | Affects  |
+| ------- | ------------- | -------- |
+| `group` | Parent        | Children |
+| `peer`  | Sibling       | Siblings |
+
+---
+
+### 📐 Note on `order-*` Classes
+
+- The layout uses `flex` to enable ordering with `order-*`.
+- Without `flex` or `grid`, `order-*` will have no visual effect.
+
+---
+
+## 🔍 Tailwind CSS – Difference Between `@layer components` and `@layer utilities`
+
+---
+
+### 🧱 @layer components
+
+- Defines reusable UI components (e.g., buttons, cards, modals).
+- Typically a combination of multiple utility classes.
+- Designed to be used as-is, following consistent design rules.
+
+**Example:**
+
+```css
+@layer components {
+  .btn-danger {
+    @apply bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600;
+  }
+}
+```
+
+### 🔧 @layer utilities
+
+`@layer utilities` is used to define small, atomic utility classes for specific tweaks. These utilities are great for one-off styles or fine-tuning layout and behavior. They usually focus on a single CSS property or a tight group of properties.
+
+**Example:**
+
+```css
+@layer utilities {
+  /* Center elements using Flexbox */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  /* Add a text shadow */
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+@layer components {
+  /* Reusable button component with padding, rounded corners, and hover effect */
+  .btn-primary {
+    @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors;
+  }
+}
+```

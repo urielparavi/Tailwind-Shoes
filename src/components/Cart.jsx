@@ -1,7 +1,7 @@
 import { CartItem } from './CartItem';
 
 export function Cart({ cartItems, onClickTrash }) {
-  // console.log('The Cart run');
+  console.log('The Cart run');
   return (
     <>
       <h2 className="text-2xl font-bold mb-10 text-center dark:text-white">
