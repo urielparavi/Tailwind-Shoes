@@ -3,9 +3,9 @@ import { FaDollarSign } from 'react-icons/fa';
 import { Select } from './Select';
 import { SIZES, QTY } from '../constant';
 
-export function CartItem({ item: { product, qty, size } }) {
-  console.log('The CartItem');
-  const { src, title, description, price } = product;
+export function CartItem({ item: { product, qty, size }, onClickTrash }) {
+  // console.log('The CartItem');
+  const { src, title, description, price, id } = product;
 
   return (
     <div
@@ -73,7 +73,10 @@ export function CartItem({ item: { product, qty, size } }) {
             />
           </div>
         </div>
-        <button className="self-start md:self-center hover:text-red-600 transition-colors">
+        <button
+          onClick={() => onClickTrash(id)}
+          className="self-start md:self-center hover:text-red-600 transition-colors"
+        >
           <CiTrash size={24} />
         </button>
       </div>

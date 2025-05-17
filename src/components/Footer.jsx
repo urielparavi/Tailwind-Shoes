@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa';
 
 export function Footer() {
-  console.log('The footer run');
+  // console.log('The footer run');
   const socialIcons = [
     { Icon: FaFacebookF, label: 'Facebook', href: '#' },
     { Icon: FaTwitter, label: 'Twitter', href: '#' },

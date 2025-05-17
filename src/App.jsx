@@ -13,7 +13,7 @@ export function App() {
   const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
   const [cartItems, setCartItems] = useState([]);
 
-  console.log('The App run');
+  // console.log('The App run');
 
   // useEffect runs once when the component mounts
   useEffect(() => {
@@ -36,6 +36,20 @@ export function App() {
       'isDarkMode',
       window.document.documentElement.classList.contains('dark'),
     );
+  };
+
+  const removeFromCart = (productId) => {
+    // Create a new copy of the cart items array to avoid mutating state directly
+    const updatedCartItems = [...cartItems];
+
+    // Find index of existing item in the cart with the same product ID (ignoring size here)
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.product.id === productId,
+    );
+
+    // Removes 1 item from updatedCartItems at the position specified by existingItemIndex
+    updatedCartItems.splice(existingItemIndex, 1);
+    setCartItems(updatedCartItems);
   };
 
   const addToCart = (product, qty, size) => {
@@ -74,7 +88,7 @@ export function App() {
         onClickClose={() => setIsSidebarOpen(false)}
       >
         {/* Our Bag */}
-        <Cart cartItems={cartItems} />
+        <Cart cartItems={cartItems} onClickTrash={removeFromCart} />
       </Sidebar>
       <div className="fixed bottom-4 right-4">
         <button

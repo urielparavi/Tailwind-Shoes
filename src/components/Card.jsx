@@ -1,7 +1,7 @@
 import { HiArrowUp } from 'react-icons/hi';
 
 export function Card({ item, onClick }) {
-  console.log('The Card run');
+  // console.log('The Card run');
   const { src, className, title } = item;
   return (
     <div

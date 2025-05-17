@@ -5,7 +5,7 @@ import { Select } from './Select';
 import { QTY, SIZES } from '../constant';
 
 export function ShoeDetail({ shoe, onClickAdd }) {
-  console.log('The ShoeDetail run');
+  // console.log('The ShoeDetail run');
   const { title, price, description, src } = shoe;
 
   const [form, setForm] = useState({ qty: null, size: null });
